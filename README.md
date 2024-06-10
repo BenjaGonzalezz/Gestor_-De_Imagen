@@ -1,0 +1,1 @@
+# Gestor_-De_Imagen
