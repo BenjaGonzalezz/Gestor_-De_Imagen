@@ -1,25 +1,28 @@
 <?php
 
-require_once '../modelo/modelo.php';
+require_once "../modelo/modelo.php";
 
 $request = $_GET['request'];
 
-switch ($request) {
-    case "cargarimg":
-      cargarimg();
-    break;
+switch ($request){
+    case "agregarimg":
+        agregarimg();
+        break;
     case "obtenerimg":
         obtenerimg();
-    break;
+        break;
+}
 
+function agregarimg(){
+    $nombre = $_POST['nombre'];
+    $imagen = $_FILES['imagen'];
+    $result = (new imagen())->agregarimg($nombre, $imagen);
+    echo json_encode($result);
 }
-function cargarimg(){
-    $nombre = $_POST ['nombre'];
-    $imagen = $_FILES ['imagen'];
-    $imagenDAO = new imagen();
-    $imagenDAO->cargarimg($nombre,$imagen);
- }
+
 function obtenerimg(){
-    $imagenes = (new imagen())->obtenerimg();
-    echo json_encode($imagenes);
+    $result = (new imagen())->obtenerimg();
+    echo json_encode($result);
 }
+
+?>

@@ -1,34 +1,27 @@
 <?php
-require_once  '../controlador/controlador.php';
 
-class imagen {
-    
-    function connection (){
-        $host = "localhost";
-        $usuario = "root";
-        $password = "";
-        $bd = "gestorimg";
-        $puerto = 3306;
-        return new mysqli($host,$usuario,$password, $bd, $puerto);
+require_once "../conection/conexion.php";
 
+class imagen{
+
+    public function obtenerimg(){
+        $connection = conection();
+        $sql = "SELECT * FROM imagen";
+        $respuesta = $connection->query($sql);
+        $imagenes = $respuesta->fetch_all(MYSQLI_ASSOC);
+        return $imagenes;
     }
 
-    public function cargarimg($nombre, $imagen){
-        $rutaTemporal=$imagen['tmp_name'];
-        $nombreImagen = $imagen['name'];
-        $extension = pathinfo($nombreImagen, PATHINFO_EXTENSION);
-        $sql = "INSERT INTO imagen(nombre,extension) values('$nombre','$extension')";
-        $connection = $this->connection();
+    public function agregarimg($nombre, $imagen){
+        $connection = conection();
+        $nomImg = $imagen['name'];
+        $extension = pathinfo($nomImg, PATHINFO_EXTENSION);
+        $sql = "INSERT INTO imagen VALUES(0, '$nombre', '$extension');";
         $connection->query($sql);
         $id = $connection->insert_id;
-        move_uploaded_file($rutaTemporal,"../imagenes/$id.$extension");
-    }
-    public function obtenerimg(){
-        $sql = "SELECT * FROM imagen";
-        $connection = $this->connection();
-        $resultado = $connection->query($sql);
-        return $resultado->fetch_all(MYSQLI_ASSOC);
-        
+        $rutaTemp = $imagen['tmp_name'];
+        move_uploaded_file($rutaTemp, "../imagenes/$id.$extension");
+
     }
 }
 
