@@ -4,7 +4,7 @@ require_once "../conection/conexion.php";
 
 class imagen{
 
-    public function obtenerimg(){
+    function obtenerimg(){
         $connection = conection();
         $sql = "SELECT * FROM imagen";
         $respuesta = $connection->query($sql);
@@ -12,11 +12,11 @@ class imagen{
         return $imagenes;
     }
 
-    public function agregarimg($nombre, $imagen){
+    function agregarimg($nombre, $imagen){
         $connection = conection();
         $nomImg = $imagen['name'];
         $extension = pathinfo($nomImg, PATHINFO_EXTENSION);
-        $sql = "INSERT INTO imagen VALUES(0, '$nombre', '$extension');";
+        $sql = "INSERT INTO imagen(nombre, extension) VALUES('$nombre', '$extension');";
         $connection->query($sql);
         $id = $connection->insert_id;
         $rutaTemp = $imagen['tmp_name'];

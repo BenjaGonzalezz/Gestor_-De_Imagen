@@ -16,8 +16,10 @@ function mostrarImg(datos){
     datos.forEach(imagen => {
         divimg.innerHTML+=`
         <div>
-        <p>${imagen.nombre}</p>
-        <img src"../../../backend/imagenes/${imagen.id}.${imagen.extension}">
+        <h3>Nombre de la imagen</h1>
+        <h5>${imagen.nombre}</h5>
+        <img src="../../../backend/imagenes/${imagen.id}.${imagen.extension}">
+        <p>ID DE LA IMAGEN: ${imagen.id}</p>
         </div>
         `
     });
