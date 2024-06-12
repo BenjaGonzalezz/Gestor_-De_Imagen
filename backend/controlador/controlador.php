@@ -2,40 +2,24 @@
 
 require_once '../modelo/modelo.php';
 
-$funcion = $_GET['funcion'];
+$request = $_GET['request'];
 
-switch ($funcion) {
-    case "cargar":
+switch ($request) {
+    case "cargarimg":
       cargarimg();
     break;
-    case "obtener":
+    case "obtenerimg":
         obtenerimg();
-    break;
-    case "ver":
-        verimg();
     break;
 
 }
 function cargarimg(){
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $imagen = $_POST['imagen'];
-    $extension = pathinfo($_FILES ['imagen']['nombre'],PATHINFO_EXTENSION);
-    move_uploaded_file($_FILES ['imagen'] ['tmp_name'], './img/' . $id . '.' . $extension);
-    $resultado = (new imagen())->cargarimg($id, $nombre, $imagen, $extension);
-    echo json_encode($resultado);
+    $nombre = $_POST ['nombre'];
+    $imagen = $_FILES ['imagen'];
+    $imagenDAO = new imagen();
+    $imagenDAO->cargarimg($nombre,$imagen);
  }
-
- function verimg(){
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $imagen = $_POST['imagen'];
-    $extension = pathinfo($_FILES ['imagen']['nombre'],PATHINFO_EXTENSION);
-    move_uploaded_file($_FILES ['imagen'] ['tmp_name'], './img/' . $id . '.' . $extension);
-    $resultado = (new imagen())->verimg($id, $nombre, $imagen, $extension);
-    echo json_encode($resultado);
-}
 function obtenerimg(){
-    $resultado = (new imagen())->obtenerimg();
-    echo json_encode($resultado);
+    $imagenes = (new imagen())->obtenerimg();
+    echo json_encode($imagenes);
 }
