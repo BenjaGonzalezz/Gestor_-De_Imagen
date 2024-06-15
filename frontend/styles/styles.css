@@ -76,7 +76,7 @@ input[type="file"] {
   border-radius: 4px;
   cursor: pointer;
 }
-input[type="file"]::file-selector-button {
+input[type="file"]::file-selector-button { /*para seleccionar solo el boton del seleccionar archivo*/
     border-radius: 4px;
     display: flex;
     margin: 0 auto 25px auto;
@@ -103,6 +103,7 @@ input[type="file"]::file-selector-button:hover{
     border-radius: 10px;
     border: 1px solid #470349;
     padding: 17px 50px;
+    cursor: pointer;
 }
 
 .boton:hover{
@@ -139,11 +140,11 @@ main {
 }
 .div-imagenes img {
     max-width: 100%;
+    max-height: 240px;
     height: auto;
     border-radius: 18%;
     box-shadow: 0 0 10px var(--principal-color);
     transition: transform 0.3s ease-in-out; /* ME GUSTO Y SE LO PUSE A TODO :) */
-    cursor: pointer;
 }
 .div-imagenes img:hover{
     transform: scale(1.3);
@@ -168,7 +169,8 @@ main {
     border: none; 
     border-radius: 55px;
     align-self: flex-end;
-    transition: transform 0.3s ease-in-out; 
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 .boton-eliminar:hover{
     transform: scale(1.2);
