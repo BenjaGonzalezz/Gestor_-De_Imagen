@@ -23,6 +23,13 @@ class imagen{
         move_uploaded_file($rutaTemp, "../imagenes/$id.$extension");
 
     }
+  
+    function eliminarimg($id){
+        $connection = conection();
+        $sql = "DELETE FROM imagen WHERE (id ='$id');";
+        $respuesta = $connection->query($sql);
+        return $respuesta;
+    }
 }
 
 ?>

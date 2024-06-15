@@ -2,15 +2,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     box-sizing: border-box;
-    --principal-color: #aebd86;
-    --secundario-color: #98be81;
+    --principal-color: #6fbd70;
+    --secundario-color: #87df50;
 }
+
+/*HEADER*/
 
 header {
     background-color: var(--principal-color);
     padding: 40px;
     text-align: center;
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:auto;
 
 }
 header a{
@@ -18,12 +24,17 @@ header a{
     padding: 0 10px;
     font-size: 1.4rem;
     color: #470349;
+    transition: transform 0.3s ease-in-out; /*NI FACEBOOK TIENE ESTA TECNOLOGIA*/
+    cursor: pointer;
+}
+header a:hover{
+    transform: scale(1.4);
 }
 header a:hover{
     opacity: 0.7;
 }
 
-
+/*cargar img*/
 section {
     background-color: var(--principal-color);
     padding: 70px;
@@ -51,6 +62,31 @@ input{
     margin-bottom: 20px;
     border-radius: 10px;
 }
+input[type="text"] {
+    background-color: var(--secundario-color);
+    border: none;
+}
+input[type="file"] {
+  display: inline-block;
+  width: auto;
+  display: flex;
+  margin: 0 auto 30px auto; 
+  padding: 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    display: flex;
+    margin: 0 auto 25px auto;
+    background-color: #b7f6eb;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+input[type="file"]::file-selector-button:hover{
+    opacity: 0.7;
+}
 .Name-img{
     border: 1px solid #ccc;
     margin-bottom: 50px;
@@ -77,7 +113,10 @@ h1{
     margin: auto;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 80px;
+}
+p{
+    color: red;
 }
 main {
     padding: 20px;
@@ -87,6 +126,10 @@ main {
     flex-direction: column;
 }
 
+
+/*VER IMAGENES*/
+
+
 .div-imagenes {
     display: flex;
     flex-wrap: wrap;
@@ -94,14 +137,17 @@ main {
     gap: 20px;
     margin: 50px 0;
 }
-
 .div-imagenes img {
     max-width: 100%;
     height: auto;
     border-radius: 18%;
     box-shadow: 0 0 10px var(--principal-color);
+    transition: transform 0.3s ease-in-out; /* ME GUSTO Y SE LO PUSE A TODO :) */
+    cursor: pointer;
 }
-
+.div-imagenes img:hover{
+    transform: scale(1.3);
+}
 .div-imagenes div {
     padding: 10px;
     border-left: 1px solid var(--secundario-color);
@@ -114,4 +160,16 @@ main {
     margin-top: 10px;
     font-size: 14px;
     color: #666;
+}
+.boton-eliminar{
+    background-color: rgb(222, 44, 44); 
+    color: white; 
+    padding: 10px 40px; 
+    border: none; 
+    border-radius: 55px;
+    align-self: flex-end;
+    transition: transform 0.3s ease-in-out; 
+}
+.boton-eliminar:hover{
+    transform: scale(1.2);
 }

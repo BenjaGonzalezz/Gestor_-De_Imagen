@@ -11,6 +11,9 @@ switch ($request){
     case "obtenerimg":
         obtenerimg();
         break;
+    case "eliminarimg":
+        eliminarimg();
+        break;
 }
 
 function agregarimg(){
@@ -24,5 +27,13 @@ function obtenerimg(){
     $result = (new imagen())->obtenerimg();
     echo json_encode($result);
 }
+  
+function eliminarimg(){
+    $id = $_POST['id'];
+    $resultado = (new imagen())->eliminarimg($id);
+    echo json_encode($resultado);
+
+}
+
 
 ?>
