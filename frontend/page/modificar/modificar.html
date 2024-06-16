@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="modificar.css" />
+    <script src="modificar.js"></script>
+    <title>Ver Imagen</title>
+  </head>
+  <body>
+    <header>
+      <a href="../cargarimg/cargarimg.html">Cargar Imagen</a>
+      <a href="../verimg/verimg.html">Ver Imagen</a
+      >
+      <a href="../modificar/modificar.html" style="text-decoration: underline"
+      >Modificar Imagen</a>
+    </header>
+    <h1>Modificar Imagenes
+    </h1>
+    <h3>(Proximamente)</h3>
+    <main>
+      <section>
+        <form action="" id="formularioimg">
+          <label for="">id:</label>
+          <input class="input-id" type="text" id="id" name="id" readonly/>
+          <label for="nombre">Nombre Imagen:</label>
+          <input
+            class="Name-img"
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+          />
+          <input type="file" id="imagen" name="imagen" required />
+          <input class="boton" type="submit" value="Modificar Imagen" />
+        </form>
+      </section>
+    </main>
+    <div id="listaimg" class="div-imagenes">
+
+    </div>
+  </body>
+</html>

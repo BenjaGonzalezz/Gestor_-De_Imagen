@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    --principal-color: #6fbd70;
+    --secundario-color: #87df50;
+}
+
+/*HEADER*/
+
+header {
+    background-color: var(--principal-color);
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:auto;
+
+}
+header a{
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    color: #470349;
+    transition: transform 0.3s ease-in-out; /*NI FACEBOOK TIENE ESTA TECNOLOGIA*/
+    cursor: pointer;
+}
+header a:hover{
+    transform: scale(1.4);
+}
+header a:hover{
+    opacity: 0.7;
+}
+
+h1{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+h3{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*cargar img*/
+section {
+    background-color: var(--principal-color);
+    padding: 40px;
+    min-width: 350px;
+    border: 1px solid #080000;
+    box-shadow: 0 0 10px rgba(8, 206, 111, 0.1);
+    border-radius: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form label {
+    margin: auto;
+    font-size: 1.4rem;
+    padding-bottom: 17px;
+}
+form .input-id{
+    margin: auto;
+    width: 18%;
+    margin-bottom: 20px;
+}
+form input{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+form input[type="text"] {
+    background-color: var(--secundario-color);
+    border: none;
+}
+form input[type="file"] {
+  display: inline-block;
+  width: auto;
+  display: flex;
+  margin: 0 auto 30px auto; 
+  padding: 6px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form input[type="file"]::file-selector-button { /*para seleccionar solo el boton del seleccionar archivo*/
+    border-radius: 4px;
+    display: flex;
+    margin: 0 auto 25px auto;
+    background-color: #b7f6eb;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+form input[type="file"]::file-selector-button:hover{
+    opacity: 0.7;
+}
+.Name-img{
+    border: 1px solid #ccc;
+}
+
+.boton{
+    background-color: var(--secundario-color);
+    max-width: 70%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto 0 auto;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #470349;
+    padding: 17px 50px;
+    cursor: pointer;
+}
+
+.boton:hover{
+    opacity: 0.8;
+}
+
+
+/*VER IMAGENES*/
+
+
+.div-imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.div-imagenes img {
+    max-width: 100%;
+    max-height: 240px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 18%;
+    box-shadow: 0 0 10px var(--principal-color);
+    transition: transform 0.3s ease-in-out; /* ME GUSTO Y SE LO PUSE A TODO :) */
+}
+.div-imagenes img:hover{
+    transform: scale(1.3);
+}
+.div-imagenes div {
+    padding: 10px;
+    border-left: 1px solid var(--secundario-color);
+    border-right: 1px solid var(--secundario-color);
+    text-align: center;
+    width: 200px;
+}
+
+.div-imagenes p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.boton-eliminar{
+    background-color: rgb(222, 44, 44); 
+    color: white; 
+    padding: 10px 40px; 
+    border: none; 
+    border-radius: 55px;
+    align-self: flex-end;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.boton-eliminar:hover{
+    transform: scale(1.2);
+}
+.boton-modificar{
+    background-color: rgb(180, 225, 118);
+    color: white; 
+    padding: 10px 40px;
+    border: none; 
+    border-radius: 55px;
+    align-self: flex-end;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    justify-content: center;
+
+}
+.boton-modificar:hover{
+    transform: scale(1.2);
+}
+.input-desaparecer{
+    display: none;
+}

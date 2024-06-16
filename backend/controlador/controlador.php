@@ -40,8 +40,9 @@ function eliminarimg(){
 
 function modificarimg(){
     $id = $_POST['id'];
+    $nombre = $_POST['nombre'];
     $imagen = $_FILES['imagen'];
-    $resultado = (new imagen())->modificarimg($id, $imagen);
+    $resultado = (new imagen())->modificarimg($id, $nombre, $imagen);
     echo json_encode($resultado);
 }
 

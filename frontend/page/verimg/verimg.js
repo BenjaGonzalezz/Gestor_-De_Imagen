@@ -22,11 +22,6 @@ function mostrarImg(datos){
         <img src="../../../backend/imagenes/${imagen.id}.${imagen.extension}">
         <p>ID DE LA IMAGEN: ${imagen.id}</p>
         <button onclick="eliminarimg('${imagen.id}')" class="boton-eliminar">Eliminar</button>
-
-        <a href="../cargarimg/cargarimg.html">
-         <button class="boton-modificar">Modificar</button>
-        </a>
-        
         </div>
         `
     });
