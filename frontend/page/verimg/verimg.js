@@ -1,5 +1,6 @@
 window.onload=()=>{
     obtenerimg();
+    modificarimg();
 }
 
 async function obtenerimg(){
@@ -20,7 +21,12 @@ function mostrarImg(datos){
         <h5>${imagen.nombre}</h5>
         <img src="../../../backend/imagenes/${imagen.id}.${imagen.extension}">
         <p>ID DE LA IMAGEN: ${imagen.id}</p>
-        <button onclick="eliminarimg('${imagen.id}')" class="boton-eliminar">eliminar</button>
+        <button onclick="eliminarimg('${imagen.id}')" class="boton-eliminar">Eliminar</button>
+
+        <a href="../cargarimg/cargarimg.html">
+         <button class="boton-modificar">Modificar</button>
+        </a>
+        
         </div>
         `
     });
@@ -49,3 +55,22 @@ async function eliminarimg(id) {
         }
 }
 
+// async function modificarimg(){
+//  let formElement = document.querySelector("#listaimg")
+
+//  formElement.onsubmit = async (e) =>{
+//      e.preventDefault()
+//      let formData =  new FormData(formElement);
+//      let url = "http://localhost/Gestor_-De_Imagen/backend/controlador/controlador.php?request=modificarimg"
+
+//      let config = {
+//          method: 'POST',
+//          body: formData
+//      }
+
+//      let respuesta = await fetch(url, config);
+//      let datos = await respuesta.json();
+//      location.reload();
+//      console.log(datos);
+// }
+// }

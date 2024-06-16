@@ -14,6 +14,9 @@ switch ($request){
     case "eliminarimg":
         eliminarimg();
         break;
+    case "modificarimg":
+        modificarimg();
+        break;
 }
 
 function agregarimg(){
@@ -33,6 +36,13 @@ function eliminarimg(){
     $resultado = (new imagen())->eliminarimg($id);
     echo json_encode($resultado);
 
+}
+
+function modificarimg(){
+    $id = $_POST['id'];
+    $imagen = $_FILES['imagen'];
+    $resultado = (new imagen())->modificarimg($id, $imagen);
+    echo json_encode($resultado);
 }
 
 
