@@ -31,8 +31,8 @@ class imagen{
         return $respuesta;
     }
     
-    public function modificarimg($id, $nombre, $imagen){
-        $sql = "UPDATE imagen SET nombre='$nombre' imagen='$imagen' WHERE (id ='$id');";
+    public function modificarimg($id, $nombre){
+        $sql = "UPDATE imagen SET nombre='$nombre' WHERE (id ='$id');";
         $connection = conection();
         $respuesta = $connection->query($sql);
         return $respuesta;

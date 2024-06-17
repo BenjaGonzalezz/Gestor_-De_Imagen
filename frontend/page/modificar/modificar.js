@@ -22,14 +22,13 @@ function mostrarImg(datos){
         <img src="../../../backend/imagenes/${imagen.id}.${imagen.extension}">
         <p>ID DE LA IMAGEN: ${imagen.id}</p>
 
-        <button onclick="CargarDatos('${imagen.id}','${imagen.nombre}',${imagen.extension}')" class="boton-modificar">Modificar</button>
+        <button onclick="CargarDatos('${imagen.id}', '${imagen.nombre}')" class="boton-modificar">Modificar</button>
 
-        
         </div>
         `
     });
 }
-function CargarDatos(id, nombre, extension){
+function CargarDatos(id, nombre){
 
     let idinput = document.querySelector("#id");
       idinput.value = id;
@@ -37,8 +36,10 @@ function CargarDatos(id, nombre, extension){
     let nombreInput = document.querySelector("#nombre");
       nombreInput.value = nombre;
 
-    let extensionInput = document.querySelector("#imagen");
-    extensionInput.value = extension;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // TE MANDA ARRIBA DE TODO EN LA PAGGINA
+    });
 }
   
 async function modificarimg(){
@@ -56,7 +57,9 @@ async function modificarimg(){
   
         let respuesta = await fetch(url, config);
         let datos = await respuesta.json();
-        location.reload();
         console.log(datos);
+        alert("Se actualizó el nombre");
+        obtenerimg();
+        formElement.reset();
   }
 }
